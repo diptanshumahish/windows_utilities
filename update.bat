@@ -1,11 +1,17 @@
-#!/bin/bash
+@echo off
+setlocal
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+REM Get the directory where the script is located
+set "SCRIPT_DIR=%~dp0"
 
-cd "$SCRIPT_DIR/.."
-
+REM Pull the latest changes from the remote repository
+cd /d "%SCRIPT_DIR%"
 git pull
 
-cp -r utilities/* "$SCRIPT_DIR/../path/to/destination/folder/"
+REM Copy new files to the current folder
+for /r "%SCRIPT_DIR%utilities" %%i in (*) do (
+    copy /y "%%i" "%SCRIPT_DIR%"
+)
 
-echo "Update complete!"
+REM Display a message indicating successful update
+echo Update complete!
