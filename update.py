@@ -31,6 +31,7 @@ def update_repository():
     output, error = run_command("git pull")
     if error:
         print(f"{Fore.RED}Error updating the repository:{Style.RESET_ALL}\n{error}")
+        print(f"{Fore.BLUE}You can retry this command.{Style.RESET_ALL}")
         exit(1)
 
 def copy_files():
@@ -38,7 +39,7 @@ def copy_files():
     source_dir = os.path.join(script_dir, 'utilities')
     destination_dir = script_dir
 
-    print(f"{Fore.GREEN}Copying new files...{Style.RESET_ALL}")
+    print(f"{Fore.BLUE}Copying new files...{Style.RESET_ALL}")
     total_files = sum(len(files) for _, _, files in os.walk(source_dir))
     
     with tqdm_progress(total=total_files, unit='file', desc="Copying") as pbar:
@@ -55,7 +56,7 @@ def main():
     update_repository()
     copy_files()
 
-    print(f"\n{Fore.GREEN}Update complete! \n{Fore.WHITE}Thank you for using this tool!{Style.RESET_ALL}")
+    print(f"\n{Fore.GREEN}Update complete! \n{Fore.WHITE}Thank you for using the Windows Utilities Tools (●'◡'●){Style.RESET_ALL}")
 
 if __name__ == "__main__":
     main()
