@@ -40,17 +40,30 @@ def copy_files():
     destination_dir = script_dir
 
     print(f"{Fore.BLUE}Copying new files...{Style.RESET_ALL}")
-    total_files = sum(len(files) for _, _, files in os.walk(source_dir))
-    
-    with tqdm_progress(total=total_files, unit='file', desc="Copying") as pbar:
+    added_files = []
+
+    with tqdm_progress(unit='file', desc="Copying") as pbar:
         for root, _, files in os.walk(source_dir):
             for file in files:
                 source_path = os.path.join(root, file)
                 destination_path = os.path.join(destination_dir, file)
-                shutil.copy2(source_path, destination_path)
+
+                print(f"Source: {source_path}, Destination: {destination_path}")
+
+                if not os.path.exists(destination_path):
+                    added_files.append(file)
+                    shutil.copy2(source_path, destination_path)
+
                 pbar.update(1)
 
     print(f"\n{Fore.GREEN}Copy complete!{Style.RESET_ALL}")
+
+    if added_files:
+        print(f"{Fore.YELLOW}Added files:{Style.RESET_ALL}")
+        for file in added_files:
+            print(f"{Fore.YELLOW}- {file}{Style.RESET_ALL}")
+    else:
+        print(f"{Fore.BLUE}No new files added.{Style.RESET_ALL}")
 
 def main():
     update_repository()
