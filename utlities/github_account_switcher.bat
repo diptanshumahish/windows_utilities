@@ -1,2 +1,5 @@
 @echo off
-python D:\Scripts\github_account_switcher.py
+setlocal
+set "SCRIPT_DIR=%~dp0"
+python "%SCRIPT_DIR%github_account_switcher.py"
+pause
