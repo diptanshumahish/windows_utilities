@@ -28,11 +28,26 @@ def run_command(command):
 
 def update_repository():
     print(f"{Fore.CYAN}Updating the repository...{Style.RESET_ALL}")
+    
+    # Capture files before git pull
+    before_pull_files = set(os.listdir())
+
     output, error = run_command("git pull")
+    
+    # Capture files after git pull
+    after_pull_files = set(os.listdir())
+
     if error:
         print(f"{Fore.RED}Error updating the repository:{Style.RESET_ALL}\n{error}")
         print(f"{Fore.BLUE}You can retry this command.{Style.RESET_ALL}")
         exit(1)
+
+    # Find missing files
+    missing_files = before_pull_files - after_pull_files
+    if missing_files:
+        print(f"{Fore.RED}Warning: The following files are missing after git pull:{Style.RESET_ALL}")
+        for file in missing_files:
+            print(f"{Fore.RED}- {file}{Style.RESET_ALL}")
 
 def copy_files():
     script_dir = os.path.dirname(os.path.realpath(__file__))
