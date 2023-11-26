@@ -3,9 +3,10 @@ import sys
 
 
 github_accounts = {
-    'diptanshumahish': 'diptanshumahish2016@gmail.com',
-    'diptanshu12': 'diptanshu@fyipen.com'
+    # 'username': 'useremail@email.com',
+    # 'username2': 'username2@email.com'
 }
+# uncomment the above part and add your own data
 
 def install_inquirer():
     try:
