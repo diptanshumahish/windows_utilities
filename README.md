@@ -20,7 +20,11 @@ While applications or widgets are an option, the question is: will the effort be
 
 ## How to use these. 🛠️
 
-1. Save this repository to some easily accessible place and extract all files. For example, save it to a path like `D:/Windows_Utilities/`.
+1. Save this repository to some easily accessible place and use `git clone`. For example, save it to a path like `D:/Windows_Utilities/`. Use the following command to do clone :
+
+```
+git clone https://github.com/diptanshumahish/windows_utilities.git
+```
 
 2. Open the 'utilities' folder and copy the path from the Windows path bar. It should look something like `D:/Windows_Utilities/utilities/`.
 
@@ -44,6 +48,24 @@ While applications or widgets are an option, the question is: will the effort be
 6. If you want to skip step 3. and want to temporarily try it, then simply right click on the file `install.bat` and run as administrator.
 
 Feel free to explore each utility for detailed instructions. Happy organizing! 🌈✨
+
+## Updating the Files
+
+I keep pushing new tools and updating previous ones, keeping in mind I made an option to directly update the files.
+
+run :
+
+```
+git pull
+```
+
+OR
+
+```
+.\update.bat
+```
+
+(recommended)
 
 ### Documentation for all utilities :
 
