@@ -6,7 +6,7 @@ github_accounts = {
     # 'username2': 'username2@email.com'
 }
 
-# Uncomment the above part and add accounts
+# Uncomment the above part and add accounts, make sure to keep spelling correct and also the git should be configured from beforehand
 if not github_accounts:
     print("\033[1;31mError: GitHub accounts not found in the file github_account_switcher.py. Please modify the file and add your GitHub accounts.\033[0m")
     sys.exit(1)
