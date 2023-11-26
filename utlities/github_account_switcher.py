@@ -1,12 +1,15 @@
 import subprocess
 import sys
 
-
 github_accounts = {
     # 'username': 'useremail@email.com',
     # 'username2': 'username2@email.com'
 }
-# uncomment the above part and add your own data
+
+# Uncomment the above part and add accounts
+if not github_accounts:
+    print("\033[1;31mError: GitHub accounts not found in the file github_account_switcher.py. Please modify the file and add your GitHub accounts.\033[0m")
+    sys.exit(1)
 
 def install_inquirer():
     try:
@@ -33,7 +36,6 @@ if __name__ == "__main__":
     print_colored("Available GitHub accounts:", '1')
     for key in github_accounts:
         print_colored(f"{key}: {github_accounts[key]}", "94")
-
 
     try:
         import inquirer
