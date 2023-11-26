@@ -70,3 +70,21 @@ OR
 ### Documentation for all utilities :
 
 Coming Soon. (┬┬﹏┬┬).
+
+### Questions, Reviews, or Feedback? 💌
+
+Feel free to reach out to me with any questions, reviews, or feedback. Your thoughts are valuable!
+
+**Email me:** 📧 [diptanshumahish2016@gmail.com](mailto:diptanshumahish2016@gmail.com)
+
+---
+
+### Connect with Me! 🌐
+
+Let's stay connected! You can find me on Instagram and drop me a message.
+
+**Instagram:** 📸 [_diptanshuu_](https://www.instagram.com/_diptanshuu_/)
+
+---
+
+Your input is important to me! 😊✨
