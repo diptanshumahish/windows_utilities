@@ -67,9 +67,11 @@ OR
 
 (recommended)
 
-### Documentation for all utilities :
+## Documentation for all utilities :
 
 Coming Soon. (┬┬﹏┬┬).
+
+---
 
 ### Questions, Reviews, or Feedback? 💌
 
