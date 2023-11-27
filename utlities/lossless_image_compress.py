@@ -22,15 +22,24 @@ check_install("PIL", install_name="Pillow")
 
 check_install("tqdm")
 check_install("numpy")
+check_install("inquirer")
 
 from PIL import Image
 import numpy as np
 from tqdm import tqdm
 import time
+import inquirer
+
+def get_user_confirmation():
+    questions = [
+        inquirer.List('start_compression', message="Do you want to start the image compression process?", choices=['Yes', 'No']),
+    ]
+    answers = inquirer.prompt(questions)
+    return answers['start_compression'] == 'Yes'
 
 def compress_rle(image):
     compressed_image = []
-    for row in tqdm(image, desc="Analyzing", unit="px", position=0, leave=True,colour="YELLOW"):
+    for row in tqdm(image, desc="Analyzing", unit="px", position=0, leave=True, colour="YELLOW"):
         compressed_row = []
         current_pixel = row[0]
         count = 1
@@ -86,6 +95,7 @@ def compress_images_in_folder():
     processed_images = 0
     converted_images = 0
 
+
     progress_bar = tqdm(total=total_images, desc="Processing Images", unit="image", position=0, leave=True)
 
     for filename in files_to_process:
@@ -95,8 +105,7 @@ def compress_images_in_folder():
         # Check if the decompressed file already exists, skip if it does
         decompressed_path = os.path.join(compressed_folder, f"compressed_{filename}")
         if os.path.exists(decompressed_path):
-            print("\n")
-            print(f"\nSkipping {filename}, Compressed file already exists.")
+            print(f"\033[1;92mSkipping {filename}, Compressed file already exists. 🔄\033[0m")
             processed_images += 1
             progress_bar.update(1)
             continue
@@ -110,8 +119,7 @@ def compress_images_in_folder():
 
             # Check if the compressed file already exists, skip if it does
             if os.path.exists(compressed_path):
-                print("\n")
-                print(f"Skipping {filename}, compressed file already exists.")
+                print(f"\033[1;92mSkipping {filename}, Compressed file already exists. 🔄\033[0m")
                 processed_images += 1
                 progress_bar.update(1)
                 continue
@@ -140,5 +148,22 @@ def compress_images_in_folder():
 
 
 
+def show_Head():
+     print("""
+\033[1;95m╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m
+\033[1;95m║ \033[0m\033[95mImage Compressor @diptanshumahish 2023 ©️ | Windows Utilities | v0.1 | 2023\033[1;95m ║\033[0m
+\033[1;95m╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m
+
+\033[93mThe compression speed may be slower for larger images, and the processing time depends on your device.\033[0m
+\033[93mPlease be patient during the conversion, and try to avoid other activities while it's in progress.\033[0m
+
+\033[1;96mℹ️ To use the program:\033[0m
+\033[1;96m1. Run the program in the folder where the image files are located.\033[0m
+\033[1;96m2. A folder named "Compressed" will be created, and all compressed files will be saved there. 📁\033[0m
+""")
 if __name__ == "__main__":
-    compress_images_in_folder()
+    show_Head()
+    if get_user_confirmation():
+        compress_images_in_folder()
+    else:
+        print("🚫 Image compression process aborted.")
