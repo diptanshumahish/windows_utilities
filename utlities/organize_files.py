@@ -4,6 +4,7 @@ import shutil
 import sys
 from tqdm import tqdm
 from colorama import Fore, Style, init
+import subprocess
 
 try:
     from tqdm import tqdm

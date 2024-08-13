@@ -3,11 +3,11 @@
 ![Banner for dptsnhu Utilities](https://img.playbook.com/U5ACTyooAioEek4e1P6tnOWoOGH1K51NPT4Pi_jwW5E/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzI0Nzg2ZjRl/LWRlMWItNGE1MS05/ZTBiLWZhMDBlYzFm/ZTEyYQ)
 
 Made with (●'◡'●) by @diptanshumahish.
-**Last updated on 26th November, 2023** 🚀
+**Last updated on 26th November, 2023 and readme on 13th February, 2024** 🚀
 
 ## Why these utilities?
 
-Manually organizing files, folders, separating them, and adjusting sleep duration settings can be tedious and time-consuming. To streamline these tasks, I created Python-based scripts that can be run globally, making them accessible from anywhere through the terminal.
+Manually organizing files, folders, separating them, doing basic image compressions, and adjusting sleep duration settings can be tedious and time-consuming. To streamline these tasks, I created Python-based scripts that can be run globally, making them accessible from anywhere through the terminal.
 
 ## Why not make an application out of this?
 
@@ -43,11 +43,14 @@ git clone https://github.com/diptanshumahish/windows_utilities.git
 
 4. Now, you can use these utilities anywhere in your system.
 
-5. For example, in your C drive, there's a folder called "Useless Files" that has a lot of files of various types. I have a utility program called **`organize_files`**. Right-click anywhere on your window, click on "Open in Terminal," and type `organize_files`. It will organize all files of various types in various folders.
+5. For example, in your C drive, there might be a folder called "Useless Files" that has a lot of files of various types. I have a utility program called **`organize_files`**. Right-click anywhere on your window, click on "Open in Terminal," and type `organize_files`. It will organize all files of various types in various folders.
 
-6. If you want to skip step 3. and want to temporarily try it, then simply right click on the file `install.bat` and run as administrator.
+6.<s>[Not working] If you want to skip step 3. and want to temporarily try it, then simply right click on the file `install.bat` and run as administrator.</s>
 
 Feel free to explore each utility for detailed instructions. Happy organizing! 🌈✨
+
+<br>
+<i>PS: Sorry the auto install and auto update scripts might not work that well as of now. Manually install the script for now.</i>
 
 ## Updating the Files
 
@@ -66,6 +69,14 @@ OR
 ```
 
 (recommended)
+
+## Currently completed
+
+-   ✅ <b>Folder flattening</b> : ( Gets all files from folder inside folder inside folder\*10000.. into a single folder.).
+-   ✅ <b> Github Account switcher </b>: Add your github accounts and easily switch them when needed with ease, no more wrong account, wrong commits.
+-   ✅ <b>Lossless Image Compression </b>: The best of all, easily compress images, maybe use a bit of your CPU and GPU but well, who likes to go to web for these smol tasks.
+-   ✅ <b>Organize files </b>: Organize your clustered 1000 files folder into properly made folders, no need to search for that one mp3 file in a sea of mp4, hehe.
+-   ✅ <b>Screen sleep</b> : Easily switch when your device sleeps.
 
 ## Documentation for all utilities :
 

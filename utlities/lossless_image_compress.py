@@ -1,6 +1,9 @@
+#@diptanshumahish
+#Image compression tool
+# Keep all your images in a single folder and run the terminal and the command inside that.
+
 import importlib
 import os
-import shutil
 import sys
 import subprocess
 
